@@ -8,10 +8,7 @@ session_start();
  */
 
 if ($_SESSION['loggedIn'] ) {
-    
 
-
-echo $myJSON;
     $response->message = "Welcome";
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
     $response->user_agent = $user_agent;
@@ -21,7 +18,7 @@ echo $myJSON;
                
             }
 } else {
-    $response->message = "Unauthorized";
+    $response->message = "Unauthorized Access";
     
     header('Location:./index.php');
 }
