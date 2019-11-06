@@ -22,6 +22,7 @@ echo $myJSON;
             }
 } else {
     $response->message = "Unauthorized";
+    
     header('Location:./index.php');
 }
 
