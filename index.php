@@ -1,6 +1,21 @@
 <?php
 //Start new or resume existing session
 session_start();
+
+
+$cookie_name = "site_visit_count";
+$count = 1;
+setcookie( $cookie_name,$count, time() + (10 * 365 * 24 * 60 * 60) );
+
+if(!isset($_COOKIE[$cookie_name])) {
+
+    echo "First visit to this page<br><br>";
+} else { 
+    echo "You have already visited this page ". $_COOKIE[$cookie_name] . " times<br><br>";
+    $count = $_COOKIE[$cookie_name];
+    $count++;
+    setcookie($cookie_name,  $count, time() + (10 * 365 * 24 * 60 * 60) );
+}
 ?>
 
 <!DOCTYPE html>
