@@ -5,22 +5,26 @@ session_start();
 
 $cookie_name = "site_visit_count";
 $count = 1;
+//Set initial value to Cookie for counting site visits
 setcookie( $cookie_name,$count, time() + (10 * 365 * 24 * 60 * 60) );
 
+//Check if cookie is not set    
 if(!isset($_COOKIE[$cookie_name])) {
 
     echo "First visit to this page<br><br>";
 } else { 
+    //If cookie is set then display the count of visits
     echo "You have already visited this page ". $_COOKIE[$cookie_name] . " times<br><br>";
     $count = $_COOKIE[$cookie_name];
     $count++;
+    //Update the count and update the cookie value
     setcookie($cookie_name,  $count, time() + (10 * 365 * 24 * 60 * 60) );
 }
 ?>
 
 <!DOCTYPE html>
 <!--
-Front Page of Website.
+Front Page of Web site.
 -->
 <html>
     <body>
