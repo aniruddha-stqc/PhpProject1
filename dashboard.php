@@ -8,8 +8,8 @@ session_start();
  */
 
 if ($_SESSION['loggedIn'] ) {
-
-    $response->message = "Welcome";
+    //Shows welcome message along with the username fetched in previous page
+    $response->message = "Welcome ". $_SESSION['username'] ;
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
     $response->user_agent = $user_agent;
     
