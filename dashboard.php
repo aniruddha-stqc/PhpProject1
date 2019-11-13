@@ -18,9 +18,8 @@ if ($_SESSION['loggedIn'] ) {
                
             }
 } else {
-    $response->message = "Unauthorized Access";
     /* Redirect browser */
-    header('Location:./index.php');
+    header('Location:error.php');
     /* Make sure that code below does not get executed when we redirect. */
     exit;
 }
