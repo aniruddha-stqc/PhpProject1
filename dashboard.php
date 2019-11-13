@@ -10,8 +10,8 @@ session_start();
 if ($_SESSION['loggedIn'] ) {
     //Shows welcome message along with the username fetched in previous page
     $response->message = "Welcome ". $_SESSION['username'] ;
-    $user_agent = $_SERVER['HTTP_USER_AGENT'];
-    $response->user_agent = $user_agent;
+    //$user_agent = $_SERVER['HTTP_USER_AGENT'];
+    //$response->user_agent = $user_agent;
     
     if(preg_match('/Android/i',$user_agent)) {
                //Code to issue tokens to Android Agents comes here
@@ -19,7 +19,7 @@ if ($_SESSION['loggedIn'] ) {
             }
 } else {
     /* Redirect browser */
-    header('Location:error.php');
+    header('Location: unauthorized.php');
     /* Make sure that code below does not get executed when we redirect. */
     exit;
 }
@@ -27,3 +27,10 @@ if ($_SESSION['loggedIn'] ) {
 echo json_encode($response);
 ?>
 
+<!DOCTYPE html>
+<!--
+Redirect to home page on logout
+-->
+<html>
+<p><a href="index.php">Logout</a> </p>
+</html>

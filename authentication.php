@@ -37,7 +37,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     }
 } else {
     /* Redirect browser */
-    header('Location:error.php');
+    header('Location: unauthorized.php');
     /* Make sure that code below does not get executed when we redirect. */
     exit;
 }
@@ -46,3 +46,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 //Closes a previously opened database connection
 $conn->close();
 ?>
+
+<!DOCTYPE html>
+<!--
+Redirect to home page
+-->
+<html>
+<p><a href="index.php">Home</a> </p>
+</html>
