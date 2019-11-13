@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-//Destroy old sessions
+//Destroy old sessions on visit to index page
 session_destroy(); 
 
 $cookie_name = "site_visit_count";
