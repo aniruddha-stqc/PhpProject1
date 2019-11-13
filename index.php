@@ -1,4 +1,9 @@
 <?php
+
+session_start();
+//Destroy old sessions
+session_destroy(); 
+
 $cookie_name = "site_visit_count";
 $count = 1;
 //Set initial value to Cookie for counting site visits
